@@ -90,7 +90,7 @@ var IS_HIDPI = utils.IS_HIDPI;
 var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
 
 /** @const */
-var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS || true;
+var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
 
 /** @const */
 var IS_TOUCH_ENABLED = 'ontouchstart' in window;
@@ -659,6 +659,9 @@ Runner.prototype = {
             this.touchController.addEventListener(Runner.events.TOUCHSTART, this);
             this.touchController.addEventListener(Runner.events.TOUCHEND, this);
             this.containerEl.addEventListener(Runner.events.TOUCHSTART, this);
+            document.addEventListener(Runner.events.TOUCHSTART, this, {
+                once: true
+            })
         } else {
             // Mouse.
             document.addEventListener(Runner.events.MOUSEDOWN, this);
