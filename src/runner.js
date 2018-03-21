@@ -90,7 +90,7 @@ var IS_HIDPI = utils.IS_HIDPI;
 var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
 
 /** @const */
-var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS || true;
+var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
 
 /** @const */
 var IS_TOUCH_ENABLED = 'ontouchstart' in window;
@@ -380,7 +380,8 @@ Runner.prototype = {
         this.tRex = new Trex(this.canvas, this.spriteDef.TREX);
 
         // 开始按钮
-        this.StartBtn = new StartBtn(this.canvas);
+        this.StartBtn = new StartBtn(this.canvas, this.spriteDef.RESTART,
+            this.dimensions);
 
         this.outerContainerEl.appendChild(this.containerEl);
 
