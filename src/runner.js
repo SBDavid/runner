@@ -90,7 +90,7 @@ var IS_HIDPI = utils.IS_HIDPI;
 var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
 
 /** @const */
-var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
+var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS || true;
 
 /** @const */
 var IS_TOUCH_ENABLED = 'ontouchstart' in window;
@@ -402,6 +402,18 @@ Runner.prototype = {
     createTouchController: function () {
         this.touchController = document.createElement('div');
         this.touchController.className = Runner.classes.TOUCH_CONTROLLER;
+    },
+
+    hideTouchController: function() {
+        if (this.touchController) {
+            this.touchController.style.height = 0;
+        }
+    },
+
+    showTouchController: function() {
+        if (this.touchController) {
+            this.touchController.style.height = '100%';
+        }
     },
 
     /**
@@ -806,6 +818,9 @@ Runner.prototype = {
 
         // Reset the time clock.
         this.time = getTimeStamp();
+
+        // 隐藏控制面板
+        this.hideTouchController();
     },
 
     stop: function () {
@@ -843,6 +858,7 @@ Runner.prototype = {
             this.playSound(this.soundFx.BUTTON_PRESS);
             this.invert(true);
             this.update();
+            this.showTouchController();
         }
     },
 
