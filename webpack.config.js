@@ -18,7 +18,13 @@ var config = {
   },
   plugins: [],
   module: {
-    loaders: []
+    rules: []
+  }, 
+  devServer: {
+    contentBase: "./",
+    historyApiFallback: true,
+    inline: true,
+    hot: true
   }
 };
 
@@ -30,7 +36,9 @@ if (process.env.NODE_ENV == 'production') {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      use: {
+        loader: "babel-loader"
+      }
     }
   ]);
 }
