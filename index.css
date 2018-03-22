@@ -1,3 +1,18 @@
+.offline.inverted {
+  -webkit-filter: invert(100%);
+  background-color: #000;
+}
+
+.offline .interstitial-wrapper {
+  color: #2b2b2b;
+  font-size: 1em;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 100px;
+  width: 100%;
+}
+
 .offline .runner-container {
     direction: ltr;
     height: 150px;

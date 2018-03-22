@@ -5,6 +5,7 @@ var CollisionBox = require('./CollisionBox');
 /** @const */
 var IS_HIDPI = utils.IS_HIDPI;
 var FPS = utils.FPS;
+var IS_MOBILE = utils.IS_MOBILE;
 
 /**
  * Obstacle.
