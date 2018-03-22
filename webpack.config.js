@@ -32,7 +32,7 @@ if (process.env.NODE_ENV == 'production') {
   config.plugins = config.plugins.concat([
     new UglifyJsPlugin()
   ]);
-  config.module.loaders = config.module.loaders.concat([
+  config.module.rules = config.module.rules.concat([
     {
       test: /\.js$/,
       exclude: /node_modules/,
