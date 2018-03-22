@@ -5,7 +5,10 @@ var CollisionBox = require('./CollisionBox');
 /** @const */
 var IS_HIDPI = utils.IS_HIDPI;
 var FPS = utils.FPS;
-var IS_MOBILE = utils.IS_MOBILE;
+var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
+
+/** @const */
+var IS_MOBILE = /Android/.test(window.navigator.userAgent) || this.IS_IOS;
 
 /**
  * Obstacle.
