@@ -630,7 +630,6 @@ Runner.prototype = {
      * Event handler.
      */
     handleEvent: function (e) {
-        console.log(e);
         return (function (evtType, events) {
             switch (evtType) {
                 case events.KEYDOWN:
