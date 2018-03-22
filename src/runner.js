@@ -824,6 +824,7 @@ Runner.prototype = {
 
         // 隐藏控制面板
         this.hideTouchController();
+        document.title = `我的小恐龙蹦跑了${this.distanceMeter.getActualDistance(this.highestScore)}米，真是太厉害了！`
     },
 
     stop: function () {
