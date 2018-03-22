@@ -24,7 +24,9 @@ var config = {
     contentBase: "./",
     historyApiFallback: true,
     inline: true,
-    hot: true
+    hot: false,
+    allowedHosts: ['a.com'],
+    port: 80
   }
 };
 

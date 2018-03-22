@@ -66,6 +66,9 @@ function Runner(outerContainerId, opt_config) {
     this.imagesLoaded = 0;
 
     this.loadImages();
+
+    // 游戏生命周期回调钩子
+    this.afterGameOver = this.config.afterGameOver;
 }
 
 
@@ -824,7 +827,10 @@ Runner.prototype = {
 
         // 隐藏控制面板
         this.hideTouchController();
-        document.title = `我的小恐龙蹦跑了${this.distanceMeter.getActualDistance(this.highestScore)}米，真是太厉害了！`
+        document.title = `我的小恐龙蹦跑了${this.distanceMeter.getActualDistance(this.highestScore)}米，真是太厉害了！`;
+        if (this.afterGameOver) {
+            this.afterGameOver();
+        }
     },
 
     stop: function () {
