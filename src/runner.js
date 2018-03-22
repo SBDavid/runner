@@ -90,7 +90,7 @@ var IS_HIDPI = utils.IS_HIDPI;
 var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
 
 /** @const */
-var IS_MOBILE = /Android/.test(window.navigator.userAgent) || this.IS_IOS;
+var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
 
 /** @const */
 var IS_TOUCH_ENABLED = 'ontouchstart' in window;

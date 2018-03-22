@@ -11,5 +11,5 @@ module.exports = {
     IS_HIDPI: window.devicePixelRatio > 1,
     FPS: 60,
     IS_IOS: /iPad|iPhone|iPod/.test(window.navigator.platform),
-    IS_MOBILE: /Android/.test(window.navigator.userAgent) || this.IS_IOS
+    IS_MOBILE: /Android/.test(window.navigator.userAgent) || IS_IOS
 }
