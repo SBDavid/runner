@@ -11,7 +11,6 @@ var IS_WX = (function(){
 
 
 window.onload = function () {
-
 	var runner = new Runner('#game-containter', {
 		ACCELERATION: 0.001,
 		BG_CLOUD_SPEED: 0.2,

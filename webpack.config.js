@@ -1,8 +1,10 @@
 var path = require('path');
 var os = require('os');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
 
 var config = {
+  mode: process.env.NODE_ENV,
   entry: './src/index.js',
   devtool: process.env.NODE_ENV == 'production' ? false : "source-map",
   output: {
@@ -24,10 +26,15 @@ var config = {
     contentBase: "./",
     historyApiFallback: true,
     inline: true,
-    hot: false,
+    hot: true,
     allowedHosts: ['a.com'],
-    port: 80
-  }
+    port: 80,
+    publicPath: '/dist/'
+  },
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
 
 if (process.env.NODE_ENV == 'production') {
